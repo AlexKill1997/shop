@@ -1,0 +1,238 @@
+@import '../mixins.sass'
+#v-footer
+  background-color: $gray-2
+  @include phones
+    display: none
+
+.v-footer__masonry-wrapper
+  padding: 50px 53px 0px 110px
+  columns: 6
+  column-gap: 16px
+  @media (max-width: 1600px)
+    columns: 4
+  @media (max-width: 1200px)
+    columns: 3
+  @media (max-width: 900px)
+    columns: 2
+  @media (max-width: 640px)
+    columns: 1
+  &-grid
+    display: block
+    margin-bottom: 32px
+    &__item
+      width: 100%
+      page-break-inside: avoid
+      break-inside: avoid-column
+
+.v-footer
+  &__heading
+    margin-bottom: 10px
+    margin-top: 0px
+    text-transform: uppercase
+    color: $red
+    font-weight: 700
+    letter-spacing: .07em
+    font-size: 16px
+
+  &__list
+    list-style: none
+    padding-left: 0
+    margin: 0
+    page-break-inside: avoid
+    break-inside: avoid-column
+    break-after: avoid-column
+
+  &__list-item
+    page-break-inside: avoid
+    break-inside: avoid
+    &:not(:first-child)
+      margin-top: 5px
+    a
+      font-weight: 400
+      font-size: 14px
+      letter-spacing: .07em
+      text-decoration: none
+      color: $text
+      &:hover
+        text-decoration: underline
+
+  &__link
+    text-decoration: none
+    color: $text
+    transition: all .1s ease
+    @include phones
+      display: flex
+      flex-direction: column
+    &:hover
+      color: $red
+
+  &__nav-list
+    list-style: none
+    display: flex
+    justify-content: center
+    margin: 30px 160px 0px 160px
+    padding-left: 0
+    padding-top: 30px
+    padding-bottom: 30px
+    @include tablets
+      display: none
+    // // border-top: 1px solid $text
+
+    // @include phones
+    //   display: flex
+    //   flex-wrap: wrap
+    //   justify-content: center
+    //   margin: unset
+    //   padding: 10px 20px
+    &-item
+      display: flex
+      align-items: center
+      @include phones
+        margin: 20px
+      &:not(:first-child)
+        margin-left: 30px
+      &-icon
+        margin-right: 15px
+        // width: 30px
+        height: 38px
+        @include phones
+          width: 40px
+          height: 40px
+      &-icon.first
+        width: 30px
+        height: 38px
+      &-title
+        font-weight: 700
+        font-size: 18px
+        letter-spacing: .07em
+        vertical-align: 12px
+
+  &__contacts
+    display: flex
+    justify-content: space-between
+    padding: 35px 68px 35px 100px
+    background-color: white
+
+    @include phones
+      margin: 0
+      display: flex
+      flex-direction: column
+      align-items: center
+      padding: 35px 0
+      margin: 0 auto
+    @include tablets
+      padding: 35px 10px
+  &__phones, &__messengers
+    display: flex
+    align-items: center
+    p
+      font-weight: 700
+      font-size: 16px
+      letter-spacing: .07em
+      color: $text
+      margin: 10px
+      @include phones
+        display: flex
+        flex-direction: column
+        text-align: center
+  &__messengers > *:not(:last-child)
+    margin-right: 30px
+.contacts__phone
+  color: $red
+  font-size: 24px
+  line-height: 28px
+  letter-spacing: .07em
+  font-weight: 700
+  margin: 0px 8px
+  a
+    text-decoration: none
+    color: $red!important
+.v-footer__extra
+  display: flex
+  justify-content: center
+  align-items: center
+  @include tablets
+    flex-direction: column
+  &__mobile-app
+    margin-right: 30px
+    @include tablets
+      margin: 0
+    &__header
+      font-size: 18px
+      margin-bottom: 10px
+      text-align: center
+    &__icon-container
+      display: flex
+      align-items: center
+      &__icon
+        width: 100px
+        margin-right: 10px
+        &::last-child
+          margin-right: 0
+  &__payment-system
+    &__header
+      margin-bottom: 10px
+      font-size: 18px
+      text-align: center
+    &__icon-container
+      display: flex
+      align-items: center
+      &__icon
+        margin-right: 10px
+        &::last-child
+          margin-right: 0
+          
+        
+.v-footer__information
+  &-socials
+    display: flex
+    justify-content: center
+    margin-top: 35px
+
+    @include phones
+      margin-top: 10px
+      padding-bottom: 10px
+    &-item:not(:first-child)
+      margin-left: 38px
+    &-item
+      width: 43px
+      img
+        width: 100%
+  &__metrica
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 10px
+    a:first-child
+      margin-right: 10px
+
+  &-list
+    list-style: none
+    padding-left: 0
+    margin-top: 35px
+
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding-bottom: 30px
+    margin-bottom: 0
+    @include phones
+      text-align: center
+      display: none
+    &-item p
+      font-size: 16px
+      letter-spacing: .07em
+      margin-top: 0px
+      margin-bottom: 15px
+      color: $text
+      @include phones
+        text-align: center
+    &-item a.copyright
+      font-weight: 700
+      text-align: center
+      color: #000000
+      text-decoration: none
+      margin-bottom: 15px
+
+div.v-footer__information__metrica > iframe
+  margin-right: 10px

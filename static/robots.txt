@@ -1,0 +1,11 @@
+User-agent: *
+Host: https://tdcsk.com/
+Sitemap: https://tdcsk.com/sitemap.xml
+
+
+
+Disallow: /cart
+Disallow: /cart/*
+Disallow: /favorites
+Disallow: /account
+Disallow: /articles

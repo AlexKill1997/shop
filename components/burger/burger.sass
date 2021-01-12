@@ -1,0 +1,65 @@
+.burger
+  $block: &
+  cursor: pointer
+  position: relative
+  min-width: 20px
+  min-height: 16px
+  margin-right: 10px
+  overflow: hidden
+  &__item
+    position: absolute
+    opacity: 1
+    transition: .4s transform, .4s opacity
+    width: 100%
+    height: 3px
+    background-color: #212121
+  &__top--left,
+  &__middle--left,
+  &__bottom--left
+    left: 0
+    border:
+    top-left-radius: 5px
+    bottom-left-radius: 3px,
+  &__top--right,
+  &__middle--right,
+  &__bottom--right
+    right: 0
+    border:
+    top-right-radius: 5px
+    bottom-right-radius: 3px
+  &__top
+    top: 0
+  &__middle
+    top: 50%
+    transform: translateY(-50%)
+  &__bottom
+    bottom: 0
+  &.isActive
+    #{$block}__top--left,
+    #{$block}__bottom--left
+      opacity: 0
+      transform: translateX(calc( -100% - 1px ))
+    #{$block}__top--right,
+    #{$block}__bottom--right
+      opacity: 0
+      transform: translateX(calc( 100% + 1px ))
+    #{$block}__middle
+      &--left
+        transform: rotate(30deg) translate(-42%, 100%)
+      &--right
+        transform: rotate(-30deg) translate(42%, 100%)
+  &.isMobile
+    #{$block}__top--left,
+    #{$block}__bottom--left
+      opacity: 0
+      transform: translateX(calc( -100% - 1px ))
+    #{$block}__top--right,
+    #{$block}__bottom--right
+      opacity: 0
+      transform: translateX(calc( 100% + 1px ))
+    #{$block}__middle
+      &--left
+        transform: rotate(30deg) translate(-42%, 100%)
+      &--right
+        transform: rotate(-30deg) translate(42%, 100%)
+
